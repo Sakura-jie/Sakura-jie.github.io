@@ -1,0 +1,1105 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="概论 软件工程三要素  过程 方法 工具   软件过程的定义  软件过程是用于软件开发及维护的一系列活动、方法及实践。   常见软件过程分类（五大类）  客户-供应商过程：内部直接影响到客户、外部直接影响开发、向客户交付软件以及软件正确操作与使用的过程。 工程过程：软件系统、产品的定义、设计、实现以及维护的过程。 支持过程 管理过程：整个软件生命周期中为工程过程、支持过程和客户-供应商过程的实践活">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件过程与管理核心要义">
+<meta property="og:url" content="http://example.com/2022/09/01/%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%AE%A1%E7%90%86%E6%A0%B8%E5%BF%83%E8%A6%81%E4%B9%89/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="概论 软件工程三要素  过程 方法 工具   软件过程的定义  软件过程是用于软件开发及维护的一系列活动、方法及实践。   常见软件过程分类（五大类）  客户-供应商过程：内部直接影响到客户、外部直接影响开发、向客户交付软件以及软件正确操作与使用的过程。 工程过程：软件系统、产品的定义、设计、实现以及维护的过程。 支持过程 管理过程：整个软件生命周期中为工程过程、支持过程和客户-供应商过程的实践活">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/image-20220521161238773.png">
+<meta property="og:image" content="http://example.com/img/image-20220521171203683.png">
+<meta property="og:image" content="http://example.com/img/image-20220522151823291.png">
+<meta property="og:image" content="http://example.com/img/image-20220522151852491.png">
+<meta property="og:image" content="http://example.com/img/image-20220522152508431.png">
+<meta property="og:image" content="http://example.com/img/image-20220522164030228.png">
+<meta property="og:image" content="http://example.com/img/image-20220522164753829.png">
+<meta property="og:image" content="http://example.com/img/image-20220522165929322.png">
+<meta property="og:image" content="http://example.com/img/image-20220522170508876.png">
+<meta property="og:image" content="http://example.com/img/image-20220522170747335.png">
+<meta property="og:image" content="http://example.com/2022/09/01/img/image-20220523160842621.png">
+<meta property="og:image" content="http://example.com/2022/09/01/img/image-20220523160815831.png">
+<meta property="og:image" content="http://example.com/2022/09/01/img/image-20220523171439077.png">
+<meta property="og:image" content="http://example.com/2022/09/01/img/image-20220523171510128.png">
+<meta property="og:image" content="http://example.com/2022/09/01/img/image-20220523172046935.png">
+<meta property="og:image" content="http://example.com/2022/09/01/img/image-20220523193430349.png">
+<meta property="article:published_time" content="2022-09-01T08:47:59.000Z">
+<meta property="article:modified_time" content="2022-09-01T08:48:52.847Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/image-20220521161238773.png">
+  
+  
+  
+  <title>软件过程与管理核心要义 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="软件过程与管理核心要义"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-09-01 16:47" pubdate>
+          2022年9月1日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          43 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">软件过程与管理核心要义</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h2><ol>
+<li><p>软件工程三要素</p>
+<ol>
+<li>过程</li>
+<li>方法</li>
+<li>工具</li>
+</ol>
+</li>
+<li><p>软件过程的定义</p>
+<blockquote>
+<p><strong>软件过程</strong>是用于软件开发及维护的一系列<strong>活动、方法及实践</strong>。</p>
+</blockquote>
+</li>
+<li><p>常见软件过程分类（五大类）</p>
+<ol>
+<li>客户-供应商过程：内部直接影响到客户、外部直接影响开发、向客户交付软件以及软件正确操作与使用的过程。</li>
+<li>工程过程：软件系统、产品的定义、设计、实现以及维护的过程。</li>
+<li>支持过程</li>
+<li>管理过程：整个软件生命周期中为工程过程、支持过程和客户-供应商过程的实践活动提供指导、跟踪和监控的过程。</li>
+<li>组织过程</li>
+</ol>
+</li>
+<li><p>常见软件过程（主要列举管理过程）</p>
+<ol>
+<li>项目管理：计划、跟踪和协调项目执行及生产所需资源的管理过程。（主要关注时间、成本）</li>
+<li>质量管理：对项目产品和服务的质量加以管理，从而获得最大的客户满意度。（主要关注质量）</li>
+<li>风险管理：整个项目的生命周期中对风险不断的识别、诊断和分析，回避风险、降低风险或消除风险，并在项目以及组织层次上建立有效的风险管理机制。</li>
+<li>子合同管理：选择合格的子合同商并对其进行管理的过程。</li>
+</ol>
+</li>
+</ol>
+<p><img src="/../img/image-20220521161238773.png" srcset="/img/loading.gif" lazyload alt="image-20220521161238773"></p>
+<h2 id="软件质量管理"><a href="#软件质量管理" class="headerlink" title="软件质量管理"></a>软件质量管理</h2><h3 id="软件质量"><a href="#软件质量" class="headerlink" title="软件质量"></a>软件质量</h3><ol>
+<li>定义：软件质量是软件产品满足明确或隐含需要能力的性能和特性的总体。</li>
+</ol>
+<h3 id="ISO-x2F-IEC-9126"><a href="#ISO-x2F-IEC-9126" class="headerlink" title="ISO&#x2F;IEC 9126"></a>ISO&#x2F;IEC 9126</h3><ol>
+<li>软件质量度量模型的组成：<ol>
+<li>软件质量特性</li>
+<li>软件质量子特性</li>
+<li>软件质量度量评价标准</li>
+</ol>
+</li>
+<li>六个一级质量特性<ol>
+<li>功能性</li>
+<li>可靠性</li>
+<li>易用性</li>
+<li>效率</li>
+<li>可维护性</li>
+<li>可移植性</li>
+</ol>
+</li>
+<li>一级特性对应的二级特性（选择题）</li>
+</ol>
+<p><img src="/../img/image-20220521171203683.png" srcset="/img/loading.gif" lazyload alt="image-20220521171203683"></p>
+<h3 id="朱兰质量管理三部曲"><a href="#朱兰质量管理三部曲" class="headerlink" title="朱兰质量管理三部曲"></a>朱兰质量管理三部曲</h3><ol>
+<li>质量计划：确定项目应达到的质量标准，以及如何满足质量标准的计划安排和方法。<ol>
+<li>质量成本：为达到产品或服务质量而付出所有努力的总成本。<ul>
+<li>预防成本</li>
+<li>评价成本</li>
+<li>失效成本</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>质量保证：确保项目达到有关标准而开展的有计划、有组织的工作活动。<ol>
+<li>正规的质量评价：质量审计</li>
+<li>总结性的质量评价：质量改进</li>
+</ol>
+</li>
+<li>质量控制：确定项目结果与质量标准是否相符，并及时纠正产品缺陷的过程。<ol>
+<li>静态方法：审计</li>
+<li>动态方法：测试</li>
+</ol>
+</li>
+</ol>
+<h2 id="软件项目管理"><a href="#软件项目管理" class="headerlink" title="软件项目管理"></a><strong>软件项目管理</strong></h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ol>
+<li><p>项目：项目是为完成某一独特的<strong>产品</strong>、<strong>服务</strong>或<strong>成果</strong>所做的<strong>一次性</strong>努力。</p>
+</li>
+<li><p>项目管理：项目管理就是在项目活动中运用相关知识, 技能, 工具和技术满足项目的要求。</p>
+</li>
+<li><p>项目管理的五大过程组：启动、计划、执行、控制和收尾。</p>
+</li>
+<li><p>项目管理的十大知识领域：</p>
+<ol>
+<li>项目集成管理</li>
+<li>项目范围管理</li>
+<li>项目时间管理</li>
+<li>项目成本管理</li>
+<li>项目质量管理</li>
+<li>项目人力资源管理</li>
+<li>项目沟通管理</li>
+<li>项目风险管理</li>
+<li>项目采购管理</li>
+<li>项目相关利益者管理</li>
+</ol>
+</li>
+</ol>
+<h3 id="可行性分析"><a href="#可行性分析" class="headerlink" title="可行性分析"></a>可行性分析</h3><ol>
+<li><p>可行性分析——净现值</p>
+<ol>
+<li>定义：净现值是成本效益分析的有力工具之一。</li>
+<li>优点：<ul>
+<li>适用性强，能基本满足项目年限相同的互斥投资方案决策。</li>
+<li>能灵活地考虑投资风险。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="识别软件项目的活动"><a href="#识别软件项目的活动" class="headerlink" title="识别软件项目的活动"></a>识别软件项目的活动</h3><ol>
+<li>WBS：WBS是面向可交付成果的对项目任务的分组,它组织并定义了整个项目范围。它是一个分级的树型结构，是对项目由粗到细的分解过程。</li>
+</ol>
+<h3 id="软件工作量估计方法"><a href="#软件工作量估计方法" class="headerlink" title="软件工作量估计方法"></a>软件工作量估计方法</h3><ol>
+<li>算法模型</li>
+<li>专家判断</li>
+<li>类比</li>
+<li>自顶向下</li>
+<li>自底向上</li>
+</ol>
+<h3 id="软件项目的进度安排"><a href="#软件项目的进度安排" class="headerlink" title="软件项目的进度安排"></a>软件项目的进度安排</h3><ol>
+<li><p>甘特图</p>
+<ol>
+<li>缺点：无法描述任务的逻辑关系</li>
+</ol>
+</li>
+<li><p><strong>关键路径法（CPM）</strong></p>
+<ol>
+<li><p>定义</p>
+<ul>
+<li>关键路径：项目网络图中花费时间最长的活动路线叫做关键路径。</li>
+<li>关键活动；组成关键路径的活动。</li>
+<li>关键路径法的缺点：关键路径法中的活动周期是确定的，固定不变的，这与现实不太符合。</li>
+</ul>
+</li>
+<li><p>关键路径的特点：</p>
+<ul>
+<li>关键路径上活动持续时间总和是项目的工期。</li>
+<li>关键路径上任何一个活动的延迟都会导致整个项目完工时间延迟。</li>
+<li>关键路径是相对的，也是变化的，非关键路径可能变为关键路径，关键路径也可能变为非关键路径。</li>
+</ul>
+</li>
+<li><p>计算</p>
+<ul>
+<li><p>核心：正向求最早开始时间和最早结束时间，二者取大作为最早开始时间；反向求最晚开始时间和最晚结束时间，二者取小作为最晚结束时间。</p>
+</li>
+<li><p>$$<br>自由时差（空闲缓冲期）&#x3D;后续活动的最早开始时间-当前活动的最早完成时间<br>$$</p>
+<p>$$<br>总时差（总缓冲期）&#x3D;最晚完成时间-最早完成时间<br>$$</p>
+<p>$$<br>干预缓冲期&#x3D;总缓冲期-空闲缓冲期<br>$$</p>
+</li>
+<li><p><strong>例题1：</strong></p>
+</li>
+</ul>
+<p><img src="/../img/image-20220522151823291.png" srcset="/img/loading.gif" lazyload alt="image-20220522151823291"></p>
+<p><img src="/../img/image-20220522151852491.png" srcset="/img/loading.gif" lazyload alt="image-20220522151852491"></p>
+<p><img src="/../img/image-20220522152508431.png" srcset="/img/loading.gif" lazyload alt="image-20220522152508431"></p>
+<ul>
+<li><strong>例题2：</strong></li>
+</ul>
+<p><img src="/../img/image-20220522164030228.png" srcset="/img/loading.gif" lazyload alt="image-20220522164030228"></p>
+<p><strong>例题3：</strong></p>
+<p><img src="/../img/image-20220522164753829.png" srcset="/img/loading.gif" lazyload alt="image-20220522164753829"></p>
+<p><strong>（DHC为关键路径）</strong></p>
+</li>
+</ol>
+</li>
+<li><p>PERT技术（工程评估评审技术）的步骤：</p>
+<ul>
+<li>估计每个活动的最可能的时间，乐观的时间，悲观的时间，计算活动的期望周期与标准偏差；</li>
+<li>正向遍历得到期望达到事件的日期；</li>
+<li>满足目标的可能性。</li>
+</ul>
+</li>
+<li><p>关键链法（CCPM）步骤：</p>
+<p><img src="/../img/image-20220522165929322.png" srcset="/img/loading.gif" lazyload alt="image-20220522165929322"></p>
+</li>
+</ol>
+<h3 id="软件项目的资源管理"><a href="#软件项目的资源管理" class="headerlink" title="软件项目的资源管理"></a>软件项目的资源管理</h3><ol>
+<li>资源：资源是执行项目所需要的任何项和人。</li>
+<li>资源分配直方图</li>
+</ol>
+<p><img src="/../img/image-20220522170508876.png" srcset="/img/loading.gif" lazyload alt="image-20220522170508876"></p>
+<h3 id="软件项目的风险管理"><a href="#软件项目的风险管理" class="headerlink" title="软件项目的风险管理"></a>软件项目的风险管理</h3><ol>
+<li><p>风险的定义：一个不确定的事件或者情况，若其一旦发生，会对项目的目标，例如：进度、成本和质量，产生积极或消极的影响。</p>
+</li>
+<li><p>风险管理的框架</p>
+<p><img src="/../img/image-20220522170747335.png" srcset="/img/loading.gif" lazyload alt="image-20220522170747335"></p>
+</li>
+<li><p>风险处理方法</p>
+<ul>
+<li><p>风险处理的方法—接受风险，规避风险，降低风险，转移风险</p>
+</li>
+<li><p>风险的分类–4大类：参与者，技术，结构，任务</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="软件项目的监督和控制"><a href="#软件项目的监督和控制" class="headerlink" title="软件项目的监督和控制"></a>软件项目的监督和控制</h3><ol>
+<li><p>挣值分析（计算题）</p>
+<ol>
+<li><p>挣值：赋予每个任务一个“挣值”，表示完成这个任务需要的支出，一般用时间或金钱衡量。</p>
+</li>
+<li><p>赋值方法：0&#x2F;100</p>
+</li>
+<li><p>三个数值：</p>
+<ul>
+<li>计划价值（PV)：已计划工作的预测成本 </li>
+<li>挣值(EV)：已执行工作的预测成本</li>
+<li>实际成本(AC)：已执行工作的实际成本</li>
+</ul>
+</li>
+<li><p>两个偏差：</p>
+<ul>
+<li><p>进度偏差（SV）：挣值与计划价值的差<br>$$<br>SV&#x3D;EV-PV<br>$$</p>
+</li>
+<li><p>成本偏差（CV）：挣值与实际成本的差</p>
+</li>
+</ul>
+<p>$$<br>CV&#x3D;EV-AC<br>$$</p>
+</li>
+<li><p>两个性能比：</p>
+<ul>
+<li><p>进度性能指标（SPI）：SPI &lt; 1——进度落后<br>$$<br>SPI&#x3D;EV&#x2F;PV<br>$$</p>
+</li>
+<li><p>成本性能指标：CPI &lt; 1——成本超支<br>$$<br>CPI&#x3D;EV&#x2F;AC<br>$$</p>
+</li>
+</ul>
+</li>
+<li><p>完成时间的估计值（TEAC）：按照当前进度项目的完成时间估计</p>
+<p>项目的计划周期（SAC）<br>$$<br>TEAC &#x3D; SAC &#x2F; SPI<br>$$<br>项目成本预算（EAC）：按照当前的进度，项目的总支出的估计</p>
+<p>全部工作的预算（按照原计划，完成所有工作所需的预算成本）（BAC）<br>$$<br>EAC &#x3D; BAC &#x2F; CPI<br>$$</p>
+</li>
+</ol>
+</li>
+<li><p>例题1：</p>
+<img src="../img/image-20220523160842621.png" srcset="/img/loading.gif" lazyload alt="image-20220523160842621" style="zoom:80%;" />
+
+<img src="../img/image-20220523160815831.png" srcset="/img/loading.gif" lazyload alt="image-20220523160815831" style="zoom:80%;" />
+</li>
+<li><p>挣值法参数分析与对应措施表</p>
+<table>
+<thead>
+<tr>
+<th><strong>序号</strong></th>
+<th>*</th>
+<th><strong>三参数关系</strong></th>
+<th><strong>分析（含义）</strong></th>
+<th><strong>措施</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>1</strong></td>
+<td></td>
+<td><strong>AC &gt; PV &gt; EV</strong>           <strong>SV&lt;0    CV&lt;O</strong></td>
+<td><strong>效率低</strong>  <strong>速度较慢</strong>  <strong>投入超前</strong></td>
+<td><strong>用工作效率高的人员更换一批工作效率低的人员</strong></td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td></td>
+<td><strong>EV  &gt; PV &gt; AC</strong>      <strong>SV&gt;0  CV&gt;0</strong></td>
+<td><strong>效率高</strong>  <strong>速度较快</strong>  <strong>投入延后</strong></td>
+<td><strong>若偏离不大，维持现状</strong></td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td></td>
+<td><strong>EV  &gt; AC &gt; PV</strong>      <strong>SV&gt;0  CV&gt;0</strong></td>
+<td><strong>效率较高</strong>  <strong>速度快</strong>  <strong>投入超前</strong></td>
+<td><strong>抽出部分人员，放慢进度</strong></td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td></td>
+<td><strong>AC  &gt; EV &gt; PV</strong>      <strong>SV&gt;0  CV&lt;0</strong></td>
+<td><strong>效率较低</strong>  <strong>速度较快</strong>  <strong>投入超前</strong></td>
+<td><strong>抽出部分人员，增加少量骨干人员</strong></td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td></td>
+<td><strong>PV  &gt; AC &gt; EV</strong>      <strong>SV&lt;0  CV&lt;0</strong></td>
+<td><strong>效率较低</strong>  <strong>速度慢</strong>  <strong>投入延后</strong></td>
+<td><strong>增加高效人员投入</strong></td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h3 id="软件项目的配置管理"><a href="#软件项目的配置管理" class="headerlink" title="软件项目的配置管理"></a>软件项目的配置管理</h3><ol>
+<li>配置管理的任务<ul>
+<li>标志变更</li>
+<li>控制变更</li>
+<li>确保变更正确实现</li>
+<li>向受变更影响的组织和个人报告变更</li>
+</ul>
+</li>
+<li>配置项：软件配置管理的对象，一个软件配置项是项目中一个特定的、可文档化的工作产品集。</li>
+</ol>
+<h2 id="经典的软件过程管理"><a href="#经典的软件过程管理" class="headerlink" title="经典的软件过程管理"></a><strong>经典的软件过程管理</strong></h2><h3 id="CMM"><a href="#CMM" class="headerlink" title="CMM"></a>CMM</h3><ol>
+<li><p>CMM——软件过程能力成熟度模型</p>
+</li>
+<li><p>出发点：<strong>CMM描述软件组织一条从无序的、混乱的过程到成熟的、有纪律的过程的改进途径</strong>，描绘出软件组织如何增加对软件开发和维护的过程控制，如何向软件工程和管理的优秀文化演变等方面的指导 。</p>
+</li>
+<li><p>CMM不是过程，不是技术，不是方法，它是一种指导思想。</p>
+</li>
+<li><p>体系结构</p>
+<img src="../img/image-20220523171439077.png" srcset="/img/loading.gif" lazyload alt="image-20220523171439077" style="zoom:67%;" />
+
+<img src="../img/image-20220523171510128.png" srcset="/img/loading.gif" lazyload alt="image-20220523171510128" style="zoom: 67%;" />
+
+<ul>
+<li><p>CMM由5个成熟度级别组成。</p>
+<ul>
+<li>初始级：软件过程不稳定，项目执行无序、混乱，没有稳定的开发环境。</li>
+<li>可重复级：规则化的</li>
+<li>已定义级：标准的、一致的</li>
+<li>已管理级：可预测的</li>
+<li>优化级：不断改进</li>
+</ul>
+<img src="../img/image-20220523172046935.png" srcset="/img/loading.gif" lazyload alt="image-20220523172046935" style="zoom:67%;" />
+</li>
+<li><p>每个成熟度级别（除级别1）包含了实现该级别的若干个关键过程域（KPA）。</p>
+</li>
+<li><p>每一个KPA进一步被分为称为公共特征的5个部分：<strong>执行约定、执行能力、执行活动、测量和分析、验证实施</strong>。</p>
+</li>
+<li><p>这些公共特征包括了关键实践（KP），即每一个KPA包括5类KP，实现了这些KP后，就实现了关键过程域的目标。</p>
+</li>
+</ul>
+</li>
+<li><p>关键过程域</p>
+<ol>
+<li><p>定义：一系列相互关联的操作活动，标识了达到某个成熟度级别时所必须满足的条件。</p>
+<blockquote>
+<p>一个软件企业如果希望达到某一个成熟度级别，就必须完全满足该级别的关键过程域的要求，即满足每个关键过程域的目标。</p>
+</blockquote>
+</li>
+<li><p>CMM共有18个KPA，每一级都有自己的KPA，KPA分为三大类：管理过程、组织过程和工程过程。</p>
+</li>
+</ol>
+</li>
+<li><p>关键实践</p>
+<ol>
+<li>定义：描述对KPA的有效实施和制度化起最重要作用的基础设施和活动。</li>
+</ol>
+</li>
+</ol>
+<h3 id="CMMI"><a href="#CMMI" class="headerlink" title="CMMI"></a>CMMI</h3><ol>
+<li><p>CMMI的两种表示方法：</p>
+<ul>
+<li>阶段式表示法：作为整个组织已建立的一个过程域集合</li>
+<li>连续式表示法：作为单一过程域或者过程域集合</li>
+</ul>
+</li>
+<li><p>CMM和CMMI的区别与联系</p>
+<ol>
+<li><p>区别：</p>
+<ul>
+<li>CMM适用于软件的组织成熟度测评。CMMI适用于多种组织成熟度测评。CMMI相对CMM更完整，更适用于大环境。</li>
+</ul>
+</li>
+<li><p>联系：CMMI有两种表示方法，一种就是与CMM一样的阶段式表现方法（把CMMI中的若干个过程区域分成5个成熟度级别）；</p>
+<p>另一种是连续式的表现方法（将CMMI中过程区域分为四大类，过程管理，项目管理，工程以及支持）</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="PSP"><a href="#PSP" class="headerlink" title="PSP"></a>PSP</h3><ol>
+<li><p>体系结构</p>
+<ol>
+<li><p>PSP成熟度模型：PSP具有4个等级<strong>，</strong>7个台阶组成的成熟度框架 。4个等级分别为个体度量过程、个体计划过程、个体质量管理过程和个体循环过程。</p>
+<img src="../img/image-20220523193430349.png" srcset="/img/loading.gif" lazyload alt="image-20220523193430349" style="zoom:67%;" />
+</li>
+<li><p>PSP过程框架：PSP过程由一系列方法、表格、脚本等组成，用以指导软件开发人员计划、度量和管理他们的工作。</p>
+</li>
+</ol>
+</li>
+<li><p>两种日志</p>
+<ol>
+<li>时间日志</li>
+<li>缺陷日志</li>
+</ol>
+</li>
+<li><p>评审比测试有效的原因：在评审时发现的错误比测试时发现的多；成本低。缺陷发现的越早，修复的花费越低；且避免缺陷比发现和修复缺陷更有效。</p>
+</li>
+<li><p>四个设计模板：</p>
+<ol>
+<li>操作规格模板（UML:用例图）：描述了系统与外界的交互；描述了用户与待设计系统的正常情况下和异常情况下的交互。</li>
+<li>功能规格模板（UML:类图）：描述系统与外界的接口。</li>
+<li>状态规格模板：可以精确定义程序的所有状态、状态之间转换以及伴随每次状态转换的动作。</li>
+<li>逻辑规格模板：可以精确描述系统的内部逻辑状态。</li>
+</ol>
+</li>
+</ol>
+<h3 id="软件过程模型"><a href="#软件过程模型" class="headerlink" title="软件过程模型"></a>软件过程模型</h3><ol>
+<li>瀑布模型<ol>
+<li>特点：<ul>
+<li>开发阶段严格按照线性方式进行</li>
+<li>阶段间有因果关系</li>
+<li>每个阶段需评审确认</li>
+<li>允许反馈</li>
+<li>强调文档</li>
+</ul>
+</li>
+<li>适用场所：需求易于完善定义的软件</li>
+<li>缺点：<ul>
+<li>各个阶段的划分完全固定，阶段之间产生大量的文档，极大地增加了工作量</li>
+<li>开发过程中很难响应客户的变更要求</li>
+<li>早期的错误可能要等到开发后期的测试阶段才能发现，进而带来 严重的后果</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>快速原型模型<ol>
+<li>优点：<ul>
+<li>加强用户和软件人员之间的沟通，明确系统的需求</li>
+<li>尽早得到系统可用性的反馈信息，及时修改以获得完整、正确需求</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>用户会由于看到的原型系统不完善，而对产品产生怀疑</li>
+<li>可能为了快速开发原型系统，而采用未经充分论证的技术（如操作系统平台、主要的算法）导致质量低下</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>增量模型<ol>
+<li>优点：<ul>
+<li>整个产品被分解成若干个构件逐步交付，用户可以不断地看到所开发软件的可运行中间版本</li>
+<li>将早期增量作为原型有助于明确后期增量的需求</li>
+<li>降低开发风险</li>
+<li>重要功能被首先交付，从而使其得到最多的测试</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>需要软件具备开放式的体系结构，以便各个构件逐步进入</li>
+<li>需求难以在增量实现之前详细定义，因此增量与需求的准确映射以及所有增量的有效集成可能会比较困难，容易退化为边做边改方式，使软件过程的控制失去整体性</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>螺旋模型<ol>
+<li>优点：（风险驱动）<ul>
+<li>关注软件的重用</li>
+<li>关注早期错误的消除</li>
+<li>将质量目标放在首位</li>
+<li>将开发阶段与维护阶段结合在一起</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>需要风险评估的经验</li>
+<li>只适应内部大规模软件开发</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>形式化方法模型<ol>
+<li>优点：<ul>
+<li>由于数学方法具有严密性和准确性，形式化方法开发过程所交付的软件系统具有较少的缺陷和较高的安全性</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>开发人员需要具备一定技能并经过特殊训练</li>
+<li>形式化描述和转换是一项费时费力的工作,成本高，质量不一定高</li>
+<li>现实应用的系统大多数是交互性强的软件，但是这些系统难以用形式化方法进行描述</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>基于组件的开发模型<ol>
+<li>优点：<ul>
+<li>充分体现软件复用的思想</li>
+<li>实现快速交付软件</li>
+<li>利用开源组件与软件</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>商业组件的修改受到限制，影响系统的演化</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="MSF"><a href="#MSF" class="headerlink" title="MSF"></a>MSF</h3><ol>
+<li>六个角色：产品管理，程序管理，开发，测试，发布管理，用户体验</li>
+<li>过程模型中的五个阶段：构思阶段，计划阶段，开发阶段，稳定阶段，部署阶段</li>
+</ol>
+<h3 id="RUP"><a href="#RUP" class="headerlink" title="RUP"></a>RUP</h3><ol>
+<li>九个软件过程<ol>
+<li>6个核心过程流：商业建模，需求，分析和设计，实现，测试，部署</li>
+<li>3个辅助过程流：配置和变更管理，项目管理，环境</li>
+</ol>
+</li>
+<li>四个阶段：<ul>
+<li>初始阶段：里程碑：生命期目标</li>
+<li>细化阶段：里程碑：生命期构架</li>
+<li>构造阶段：里程碑：初始运作功能。构造阶段的结束是项目开发的<strong>第三个重要的里程碑</strong>。这个阶段产生的版本通常被称为β版。</li>
+<li>交付阶段：里程碑：产品发布</li>
+</ul>
+</li>
+<li>六大经验：迭代式开发，管理需求，基于组件的体系结构，可视化建模，验证软件质量，控制软件变更</li>
+</ol>
+<h2 id="敏捷软件开发"><a href="#敏捷软件开发" class="headerlink" title="敏捷软件开发"></a><strong>敏捷软件开发</strong></h2><ol>
+<li>敏捷宣言<ul>
+<li>注重个人及互动胜于过程和工具</li>
+<li>注重可用的软件胜于详尽的文档</li>
+<li>注重客户协作胜于合同谈判</li>
+<li>注重响应变化胜于恪守计划</li>
+</ul>
+</li>
+<li>Scrum：一个敏捷开发框架，是一个增量的、迭代的开发过程</li>
+<li>极限编程（XP）：一种全新而快捷的软件开发方法。XP团队使用现场客户、特殊计划方法和持续测试来提供快速的反馈和全面的交流。这可以帮助团队最大化地发挥他们的价值。<ul>
+<li>XP认为沟通是项目成功的关键</li>
+<li>实践：现场客户，计划游戏，系统隐喻，简单设计，代码集体所有</li>
+<li>XP特别适合于小型的有责任心的、自觉自励的团队开发需求不确定或者迅速变化的软件</li>
+</ul>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>软件过程与管理核心要义</div>
+      <div>http://example.com/2022/09/01/软件过程与管理核心要义/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年9月1日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
