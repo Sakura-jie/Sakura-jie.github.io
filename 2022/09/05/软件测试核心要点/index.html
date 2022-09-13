@@ -1,0 +1,1082 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="软件测试介绍软件测试目的：发现软件中的缺陷和错误。  软件缺陷  　　至少满足以下5个规则之一，才称为发生一个软件缺陷： 　　1.软件未实现产品说明书要求的功能——功能缺失 　　2.软件出现了产品说明书指明不应该出现的错误——错误、缺陷 　　3.软件实现了产品说明书未提到的功能——功能多余 　　4.软件未实现产品说明书虽未明确提及但应该实现的目标——对隐性需求的把握，同时发现需求遗漏  　　5.软">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件测试核心要点">
+<meta property="og:url" content="http://example.com/2022/09/05/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%A0%B8%E5%BF%83%E8%A6%81%E7%82%B9/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="软件测试介绍软件测试目的：发现软件中的缺陷和错误。  软件缺陷  　　至少满足以下5个规则之一，才称为发生一个软件缺陷： 　　1.软件未实现产品说明书要求的功能——功能缺失 　　2.软件出现了产品说明书指明不应该出现的错误——错误、缺陷 　　3.软件实现了产品说明书未提到的功能——功能多余 　　4.软件未实现产品说明书虽未明确提及但应该实现的目标——对隐性需求的把握，同时发现需求遗漏  　　5.软">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/2090353-20220516202626221-1756413933.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516202635992-1615740833.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516202648464-1839815070.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203121080-393514117.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203127715-1805684740.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203137472-652692340.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203147264-1416779506.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203159338-146243009.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203208232-756791774.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203222389-365686960.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203231125-1208625057.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203242648-1118355756.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203252882-1427905807.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203301157-722540377.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203311293-1433169450.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203320336-1437466812.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203327942-376604768.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203339371-1099953136.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203434365-1696765090.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203443985-1154935360.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203452273-285220403.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203501892-928871466.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203515970-1487482789.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203525064-1121880078.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203534152-255734333.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203543250-984665675.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203553336-1199385281.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203629384-149500777.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203643734-1578892095.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203651645-428783374.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203700716-1909194510.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203712630-1990832312.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203734204-625465892.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203803580-681685902.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203809887-1062940393.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203830691-1262138159.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203840091-970036967.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203853849-1668356872.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203903140-761176991.png">
+<meta property="og:image" content="http://example.com/img/2090353-20220516203911255-182962395.png">
+<meta property="article:published_time" content="2022-09-05T03:05:55.000Z">
+<meta property="article:modified_time" content="2022-09-05T03:09:47.388Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="软件测试">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/2090353-20220516202626221-1756413933.png">
+  
+  
+  
+  <title>软件测试核心要点 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="软件测试核心要点"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-09-05 11:05" pubdate>
+          2022年9月5日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          52 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">软件测试核心要点</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="软件测试介绍"><a href="#软件测试介绍" class="headerlink" title="软件测试介绍"></a>软件测试介绍</h2><p>软件测试目的：发现软件中的缺陷和错误。</p>
+<ul>
+<li>软件缺陷</li>
+</ul>
+<p>　　至少满足以下5个规则之一，才称为发生一个软件缺陷：</p>
+<p>　　1.软件未实现产品说明书要求的功能——功能缺失</p>
+<p>　　2.软件出现了产品说明书指明不应该出现的错误——错误、缺陷</p>
+<p>　　3.软件实现了产品说明书未提到的功能——功能多余</p>
+<p>　　4.软件未实现产品说明书虽未明确提及但应该实现的目标——对隐性需求的把握，同时发现需求遗漏 </p>
+<p>　　5.软件难以理解，不易使用，运行缓慢——用户体验角度</p>
+<p>软件产品规格说明书为什么是软件缺陷存在最多的地方？</p>
+<ul>
+<li>原因：<ul>
+<li>软件产品还没有设计、开发、完全靠想象去描述系统的实现结果，所以有些特性还不够清晰</li>
+<li>需求不断变换</li>
+<li>对规格说明书不够重视</li>
+<li>沟通不充分</li>
+</ul>
+</li>
+</ul>
+<p>软件测试根本目的：提高软件质量，降低软件风险</p>
+<p>软件风险分为内部风险和外部风险。</p>
+<p>内部风险：如在即将销售发现重大错误，延迟发布，失去市场机会</p>
+<p>外部风险：产品上线后，用户发现问题，引起索赔、产生法律纠纷、客户拒绝支付费用、甚至失去客户的风险</p>
+<p>软件测试关键：如何合理地设计测试用例</p>
+<p>测试用例是为某个特殊目标而编制的一组测试输入、执行条件以及预期结果</p>
+<p>软件测试不等于程序测试</p>
+<p>回归测试：黑盒、白盒</p>
+<p>冒烟测试：单元、集成、系统、验收</p>
+<p>随机测试：功能、性能</p>
+<p>黑盒测试：完全不考虑程序内部结构和内部特性的情况下进行。只要进行一些输入，就能得到某种输出结果。</p>
+<p>白盒测试：软件测试员可以访问程序员的代码，并通过检查代码来协助测试</p>
+<p><strong>静态测试</strong></p>
+<ul>
+<li>特点：<ul>
+<li>不必运行程序</li>
+<li>无需条件，易展开</li>
+</ul>
+</li>
+<li>方法：<ul>
+<li>代码审查（与设计的一致性、标准、可读性，表达式逻辑、结构合理性）</li>
+<li>代码检查（与审查类似，但不如审查检查范围广）</li>
+<li>桌面检查（阅读自己程序，效率低）</li>
+<li>静态分析（借助于测试工具）</li>
+<li>数据流、控制流、接口分析、表达式分析</li>
+</ul>
+</li>
+</ul>
+<h5 id="动态测试"><a href="#动态测试" class="headerlink" title="动态测试"></a>动态测试</h5><ul>
+<li>特点<ul>
+<li>要求在代码实现的前提下进行</li>
+<li>运行被测试的程</li>
+<li>要进行测试数据准备</li>
+</ul>
+</li>
+<li>方法<ul>
+<li>白盒测试</li>
+<li>黑盒测试</li>
+<li>灰盒测试</li>
+</ul>
+</li>
+</ul>
+<p>软件测试原则：</p>
+<ul>
+<li>尽早和及时的测试</li>
+<li>准备好测试数据和预期结果</li>
+<li>输入数据包括合理输入条件和不合理输入条件</li>
+</ul>
+<h2 id="软件需求验证"><a href="#软件需求验证" class="headerlink" title="软件需求验证"></a>软件需求验证</h2><h3 id="需求验证"><a href="#需求验证" class="headerlink" title="需求验证"></a>需求验证</h3><h4 id="需求验证概述"><a href="#需求验证概述" class="headerlink" title="需求验证概述"></a>需求验证概述</h4><ol>
+<li>需求验证是软件需求的<strong>最后</strong>一个环节。</li>
+<li>目标：尽可能发现存在的错误。</li>
+<li>主要手段：需求评审</li>
+<li>需求验证是专指在需求规格说明完成之后，对需求规格说明文档进行的验证活动。</li>
+</ol>
+<h4 id="需求验证方法"><a href="#需求验证方法" class="headerlink" title="需求验证方法"></a>需求验证方法</h4><p>需求验证的主要方法是评审。</p>
+<h2 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h2><p>测试用例是为特定的目的而设计的一组测试输入、执行条件和预期的结果。测试用例是执行的最小实体。</p>
+<p>测试用例设计要素：</p>
+<ul>
+<li>用例ID</li>
+<li>用例概述：对该用例设计的目的进行描述</li>
+<li>用例优先级</li>
+<li>前置条件（可选）：用例必须满足的前提条件</li>
+<li>操作步骤</li>
+<li>测试数据</li>
+<li>预期结果</li>
+<li>备注（可选）</li>
+<li>BUG-ID</li>
+</ul>
+<p>测试用例评审</p>
+<ul>
+<li>目的：确保用例更全面、结构更清晰、提高用例质量</li>
+<li>评审时间：用例初步设计之后、全部用例完成之后</li>
+</ul>
+<p>黑盒测试目的</p>
+<ul>
+<li>检查程序功能能否按需求规格说明书的规定正常使用，测试各个功能是否有遗漏，检测性能等特性要求是否满足。</li>
+<li>检测人机交互是否错误，检测数据结构或外部数据库访问是否错误，程序是否能适当地接收输入数据而产生正确的输出结果，并保持外部信息（如数据库或文件）的完整</li>
+<li>检测程序初始化和终止方面的错误。</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>有针对性地寻找问题，并且定位问题更准确。</li>
+<li>黑盒测试可以证明产品是否达到用户要求的功能，符合用户的工作要求。</li>
+<li>能重复执行相同的动作，测试工作中最枯燥的部分可交由机器完成。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>需要充分了解产品用到的技术，测试人员需要具有较多经验。</li>
+<li>在测试过程中很多是手工测试操作。</li>
+<li>测试人员要负责大量文档、报表的编制和整理工作。</li>
+</ul>
+<p>静态黑盒测试：文档测试</p>
+<p>动态黑盒测试：功能测试、验收测试、性能测试</p>
+<h3 id="黑盒测试方法：PPT03"><a href="#黑盒测试方法：PPT03" class="headerlink" title="黑盒测试方法：PPT03"></a>黑盒测试方法：PPT03</h3><ul>
+<li><p>等价类划分法</p>
+<p>划分等价类：寻找输入条件、划分为多个等价类、形成互不相交子集</p>
+</li>
+</ul>
+<p>例：</p>
+<p><img src="/../img/2090353-20220516202626221-1756413933.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516202635992-1615740833.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516202648464-1839815070.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="边界值分析"><a href="#边界值分析" class="headerlink" title="边界值分析"></a>边界值分析</h3><p>边界值分析法就是对输入或输出的边界值进行测试的一种黑盒测试方法。通常边界值分析法是作为对等价类划分法的补充，这种情况下，其测试用例来自等价类的边界</p>
+<p>边界值分析法利用<strong>输入变量的最小值、略大于最小值、输入值域内的任意值、略小于最大值和最大值</strong>来设计测试用例</p>
+<p>例：</p>
+<p><img src="/../img/2090353-20220516203121080-393514117.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>等价类划分：</p>
+<p><img src="/../img/2090353-20220516203127715-1805684740.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203137472-652692340.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>边界值分析：</p>
+<p><img src="/../img/2090353-20220516203147264-1416779506.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="判定表测试"><a href="#判定表测试" class="headerlink" title="判定表测试"></a>判定表测试</h3><p>在所有的黑盒测试方法中，基于判定表的测试是最为严格、最具有逻辑性的测试方法。</p>
+<p>判定表由4部分组成，即条件桩、动作桩、条件项、动作项，及规则。</p>
+<ul>
+<li>条件桩：条件</li>
+<li>动作桩：问题规定可能采取的操作</li>
+<li>条件项：条件下的取值</li>
+<li>动作项：条件下采取的操作</li>
+<li>规则：判定表中贯穿条件项和动作项的一列就是一条规则。</li>
+</ul>
+<blockquote>
+<p>有n个条件的判定表有2的n次方个规则</p>
+</blockquote>
+<p>例：</p>
+<p><img src="/../img/2090353-20220516203159338-146243009.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="因果图"><a href="#因果图" class="headerlink" title="因果图"></a>因果图</h3><p>定义：利用图解法分析输入的各种组合情况，从而设计测试用例的方法</p>
+<p><img src="/../img/2090353-20220516203208232-756791774.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>因果图中的4种基本关系</p>
+<p>在因果图的基本符号中，图中的左结点ci表示输入状态（或称原因），右结点ei表示输出状态（或称结果）。ci 与 ei 取值0或1，0表示某状态不出现，1则表示某状态出现。</p>
+<ul>
+<li>恒等：若 c1 是1，则 e1 也为1，否则 e1 为0</li>
+<li>非：若 c1 是1，则 e1 为0，否则e1为1</li>
+<li>或：若 c1 或 c2 或 c3 是1，则 e1 为1，否则 e1 为0</li>
+<li>与：若 c1 和 c2 都是1，则 e1 为1，否则 e1 为0</li>
+</ul>
+<p>因果图中的约束</p>
+<p>在实际问题中输入状态相互之间、输出状态相互之间可能存在某些依赖关系，称为“约束”。对于输入条件的约束有E、I、O、R四种约束，对于输出条件的约束只有M约束。</p>
+<ul>
+<li>E约束(互斥)：原因a和原因b中最多有一个可能成立，即a和b不会同时成立。</li>
+<li>I约束(包含)：a、b、c这三个原因中至少有一个必须成立。</li>
+<li>O约束(唯一)：原因a和b有且仅有一个成立。</li>
+<li>R约束(要求)：原因a出现时，原因b也必须出现。</li>
+<li>M约束(强制)：若结果a为1，则结果b强制为0。当a为0，b的值不确定</li>
+</ul>
+<p><img src="/../img/2090353-20220516203222389-365686960.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>案例：</p>
+<p><img src="/../img/2090353-20220516203231125-1208625057.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203242648-1118355756.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203252882-1427905807.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203301157-722540377.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="错误推测法"><a href="#错误推测法" class="headerlink" title="错误推测法"></a>错误推测法</h3><p>定义：列举出程序中所有可能有的错误和容易发生错误的特殊情况，根据他们选择测试用例。</p>
+<h3 id="正交试验法"><a href="#正交试验法" class="headerlink" title="正交试验法"></a>正交试验法</h3><ul>
+<li><strong>指标：</strong>通常把判断试验结果优劣的标准叫做试验的指标</li>
+<li><strong>因子：</strong>影响实验指标的条件称为因子</li>
+<li><strong>因子的状态：</strong>影响实验因子的条件</li>
+</ul>
+<p>案例：</p>
+<p><img src="/../img/2090353-20220516203311293-1433169450.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203320336-1437466812.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203327942-376604768.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="场景法"><a href="#场景法" class="headerlink" title="场景法"></a>场景法</h3><p>案例：</p>
+<p><img src="/../img/2090353-20220516203339371-1099953136.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203434365-1696765090.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203443985-1154935360.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203452273-285220403.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203501892-928871466.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h2><h3 id="基本路径测试"><a href="#基本路径测试" class="headerlink" title="基本路径测试"></a>基本路径测试</h3><p>根据程序的控制流图找出一个模块所需测试的基本路径，根据这些基本路径设计构造相应的测试用例。</p>
+<p><img src="/../img/2090353-20220516203515970-1487482789.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>设计步骤：</p>
+<ul>
+<li>根据模块逻辑构造<strong>控制流图</strong>（如上图）</li>
+<li>计算控制流图的<strong>环复杂度</strong></li>
+<li>列出<strong>包含起始节点和终止节点的基本路径</strong></li>
+<li>检查一下列出的基本路径数目<strong>是否超过</strong>控制流图的环复杂度</li>
+<li>设计覆盖这些基本路径的测试用例</li>
+</ul>
+<p>环复杂度：用V(G)表示，用来衡量一个模块判定结构的复杂程度，在数量上表现为独立的路径条数，是需要测试的基本路径数目的上限</p>
+<ul>
+<li>计算公式：<ul>
+<li>V(G) &#x3D;闭合区域的数目</li>
+<li><strong>V(G) &#x3D;边的数目-节点的数目 + 2</strong></li>
+</ul>
+</li>
+</ul>
+<p>案例：</p>
+<p><img src="/../img/2090353-20220516203525064-1121880078.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203534152-255734333.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203543250-984665675.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203553336-1199385281.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><strong>采用白盒测试方法必须遵循以下几条原则，才能达到测试的目的：</strong></p>
+<ul>
+<li>保证一个模块中的所有独立路径<strong>至少被测试一次</strong>。</li>
+<li>所有逻辑值均需测试真 (true) 和假 (false) 两种情况。</li>
+<li>检查程序的内部数据结构，保证其结构的有效性。</li>
+<li>在上下边界及可操作范围内运行所有循环。</li>
+</ul>
+<h2 id="白盒测试——覆盖测试"><a href="#白盒测试——覆盖测试" class="headerlink" title="白盒测试——覆盖测试"></a>白盒测试——覆盖测试</h2><h3 id="测试覆盖率"><a href="#测试覆盖率" class="headerlink" title="测试覆盖率"></a>测试覆盖率</h3><p>测试覆盖率：用于确定测试所执行到的覆盖项的百分比。其中的覆盖项是指作为测试基础的一个入口或属性，比如语句、分支、条件等。</p>
+<p>$$<br>覆盖率&#x3D;至少被执行一次的item数&#x2F;item的总数<br>$$</p>
+<blockquote>
+<p>一个程序总代码为100行，使用测试用例运行一次，执行了75行代码，则代码覆盖率＝75％</p>
+</blockquote>
+<p>测试覆盖率包括功能点覆盖率和结构覆盖率。</p>
+<ul>
+<li>功能点覆盖率：用于表示软件已经实现的功能与软件需要实现的功能之间的比例关系。</li>
+<li>结构覆盖率包括语句覆盖率、分支覆盖率、循环覆盖率、路径覆盖率等等。</li>
+</ul>
+<h3 id="逻辑覆盖法"><a href="#逻辑覆盖法" class="headerlink" title="逻辑覆盖法"></a>逻辑覆盖法</h3><p>根据覆盖目标的不同，逻辑覆盖又可分为语句覆盖、判定覆盖、条件覆盖、判定&#x2F;条件覆盖、组合覆盖和路径覆盖。</p>
+<ul>
+<li>语句覆盖：选择足够多的测试用例，使得程序中的<strong>每个可执行语句</strong>至少执行一次。</li>
+<li>判定覆盖：通过执行足够的测试用例，使得程序中的<strong>每个判定</strong>至少都获得一次“真”值和“假”值， 也就是使程序中的每个取“真”分支和取“假”分支至少均经历一次，也称为“分支覆盖”。</li>
+<li>条件覆盖：设计足够多的测试用例，使得程序中<strong>每个判定包含的每个条件的可能取值（真&#x2F;假）</strong>都至少满足一次。</li>
+<li>判定&#x2F;条件覆盖：设计足够多的测试用例，使得程序中<strong>每个判定包含的每个条件的所有情况</strong>（真&#x2F;假）至少出现一次，并且<strong>每个判定本身的判定结果</strong>（真&#x2F;假）也至少出现一次。</li>
+</ul>
+<blockquote>
+<p>满足判定&#x2F;条件覆盖的测试用例一定同时满足判定覆盖和条件覆盖。</p>
+</blockquote>
+<ul>
+<li>组合覆盖：通过执行足够的测试用例，使得程序中每个判定的所有可能的条件取值组合都至少出现一次。</li>
+</ul>
+<blockquote>
+<p>满足组合覆盖的测试用例一定满足判定覆盖、条件覆盖和判定&#x2F;条件覆盖。</p>
+</blockquote>
+<ul>
+<li>路径覆盖：设计足够多的测试用例，要求覆盖程序中所有可能的路径。</li>
+</ul>
+<p><img src="/../img/2090353-20220516203629384-149500777.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h4 id="语句覆盖"><a href="#语句覆盖" class="headerlink" title="语句覆盖"></a>语句覆盖</h4><p>优点：直观、简单，易自动化</p>
+<p>缺点：发现错误能力很弱</p>
+<h4 id="判定覆盖"><a href="#判定覆盖" class="headerlink" title="判定覆盖"></a>判定覆盖</h4><p>优点：发现错误能力比语句覆盖强</p>
+<p>缺点：对<strong>复合条件判断</strong>，只判定整个最终结果，而忽略每个条件的取值情况，必然会遗漏部分测试路径。</p>
+<h4 id="条件覆盖"><a href="#条件覆盖" class="headerlink" title="条件覆盖"></a>条件覆盖</h4><p>优点：发现错误的能力比语句覆盖强</p>
+<p>缺点：条件覆盖不能保证判定覆盖，对复合条件，条件覆盖只能保证每个条件至少有一次为真，而不考虑所有的判定结果。</p>
+<h4 id="判定条件覆盖"><a href="#判定条件覆盖" class="headerlink" title="判定条件覆盖"></a>判定条件覆盖</h4><p>$$<br>判定条件覆盖率&#x3D;条件操作数值或判定结果至少被评价一次的数量&#x2F;（条件操作数值总数+判定结果总数）<br>$$</p>
+<h4 id="组合覆盖"><a href="#组合覆盖" class="headerlink" title="组合覆盖"></a>组合覆盖</h4><p>$$<br>组合覆盖率&#x3D;条件操作数值结果组合的数量&#x2F;条件操作数值总组合数<br>$$</p>
+<h4 id="路径覆盖"><a href="#路径覆盖" class="headerlink" title="路径覆盖"></a>路径覆盖</h4><p>根据路径覆盖的基本思想，在满足组合覆盖的测试用例中<strong>修改其中一个测试用例</strong>，则可以实现路径覆盖。</p>
+<p>满足路径覆盖的测试用例并不一定满足组合覆盖</p>
+<blockquote>
+<p>逻辑覆盖并不能真正做到无遗漏。</p>
+</blockquote>
+<h3 id="数据流测试"><a href="#数据流测试" class="headerlink" title="数据流测试"></a>数据流测试</h3><p>如果程序中某一语句i的执行能改变某程序变量V的值，则称V被语句i定义,可记作Def（V，i）。</p>
+<p>如果某一语句j的执行<strong>引用</strong>了内存中变量V的值，则称变量V被语句j使用，可记作Use（V，j）。</p>
+<p>案例：</p>
+<p><img src="/../img/2090353-20220516203643734-1578892095.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203651645-428783374.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<blockquote>
+<p>给一个变量赋值时才算该变量被定义</p>
+</blockquote>
+<h3 id="最少测试用例数"><a href="#最少测试用例数" class="headerlink" title="最少测试用例数"></a>最少测试用例数</h3><p><img src="/../img/2090353-20220516203700716-1909194510.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>常用的白盒测试方法包括<strong>基本路径测试、分支-条件测试和循环测试</strong>。</p>
+<p>覆盖准则可以作为测试停止或&#x2F;和选取测试数据的标准。</p>
+<p>基于控制流的覆盖准则是被工业界广泛采用的覆盖标准之一。按照覆盖率从低到高的顺序，基于控制流的覆盖准则包括语句覆盖、分支覆盖、条件覆盖、分支-条件覆盖和多条件覆盖。</p>
+<h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><p>定义：是对软件基本组成单元进行的测试。是检验程序最小单位，即检查<strong>模块</strong>有无错误， 它是在编码完成后<strong>必须进行</strong>的测试工作。</p>
+<p>目的：验证这段代码的行为是否与我们期望的一致。</p>
+<p>步骤：编译运行程序（查看能否正确运行）→静态测试（检查代码是否符合规范）→动态测试（深入检查代码的正确性，容错性和边界值等）</p>
+<h3 id="单元测试通过准则"><a href="#单元测试通过准则" class="headerlink" title="单元测试通过准则"></a>单元测试通过准则</h3><p>（1）功能与设计说明一致；</p>
+<p>（2）性能达到软件设计指标；</p>
+<p>（3）命名和编码符合规则；</p>
+<p>（4）逻辑测试达到规定的覆盖率，若达不到规定指标，应在测试报告中给出合理解释；</p>
+<p>（5）对发现的问题已进行修改并通过回归测试。</p>
+<h3 id="单元测试主要任务"><a href="#单元测试主要任务" class="headerlink" title="单元测试主要任务"></a>单元测试主要任务</h3><p>单元测试针对每个程序的模块，主要测试如下5方面： 模块接口、局部数据结构、边界条件、路径测试和错误处理。</p>
+<p>模块接口：</p>
+<ul>
+<li>对模块接口进行测试，检查进出程序单元的数据流是否正确。须在其它测试之前进行。</li>
+</ul>
+<blockquote>
+<p>主要关注单元中的输入和输出。</p>
+</blockquote>
+<p>局部数据结构：</p>
+<ul>
+<li>测试模块内部的数据能否保持完整性，包括内部数据的内容、形式及相互关系不发生错误。</li>
+</ul>
+<p>路径测试：针对程序路径进行测试</p>
+<p>边界条件：边界值分析法进行测试</p>
+<p>出错处理：模块在工作中发生错误时，出错处理设施是否有效。</p>
+<h3 id="单元测试执行过程"><a href="#单元测试执行过程" class="headerlink" title="单元测试执行过程"></a>单元测试执行过程</h3><ol>
+<li>驱动模块：模拟被测试模块的上一级模块，相当于被测模块的主程序。</li>
+<li>桩模块：模拟被测模块工作过程中所调用的模块。它们一般只进行很少的数据处理。</li>
+<li>驱动模块、桩模块——案例</li>
+</ol>
+<p><img src="/../img/2090353-20220516203712630-1990832312.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/../img/2090353-20220516203734204-625465892.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p> <img src="/../img/2090353-20220516203803580-681685902.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p> <img src="/../img/2090353-20220516203809887-1062940393.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a>集成测试</h2><p>定义：集成测试又称组装测试，是在单元测试的基础上，将所有模块按照设计要求组装成 子系统或系统进行的测试活动。又称子系统测试、联合测试。</p>
+<p>目的：确保各单元组合在一起后能够按既定意图协作运行，并确保增量的行为正确，所测试的内容包括单元间的接口以及集成后的功能。</p>
+<p>集成测试需要考虑的问题：</p>
+<ol>
+<li>在把各个模块连接起来的时候，穿越模块接口的数据是否会丢失；</li>
+<li>各个子功能组合起来，能否达到预期要求的父功能；</li>
+<li>一个模块的功能是否会对另一个模块的功能产生不利的影响；</li>
+<li>全局数据结构是否有问题</li>
+<li>单个模块的误差积累起来，是否会放大，从而达到不可接受的程度。</li>
+</ol>
+<p>集成测试的层次：</p>
+<ol>
+<li>模块内集成测试。</li>
+<li>子系统内集成测试：先测试子系统内的功能模块，然后将各个功能模块组合起来确认子系统的功能是否达到预期要求。</li>
+<li>子系统间集成测试：测试的单元是子系统之间的接口。子系统是可单独运行的程序或进程。</li>
+</ol>
+<p>集成测试方法</p>
+<ol>
+<li>静态测试技术——针对概要设计的测试</li>
+<li>动态测试技术——灰盒测试</li>
+</ol>
+<p>灰盒测试的优点：</p>
+<ol>
+<li>能够进行基于需求的测试和基于路径的覆盖测试。</li>
+<li>可深入被测对象的内部，便于错误的识别分析和解决。</li>
+<li>能够保证设计的黑盒测试用例的完整性，防止功能或功能组合的遗漏。</li>
+<li>能够减小需求或设计不详细或不完整性对测试有效性造成影响。</li>
+</ol>
+<p>集成策略：</p>
+<ol>
+<li><p>非增量式集成策略：一步到位（适合小系统）</p>
+<ul>
+<li>优点：①方法简单 ②允许多测试人员同时并行工作，人力物力资源利用率较高。</li>
+<li>缺点：①必须为每个模块准备相应的驱动模块和桩模块，测试成本较高 ②一旦集成后包含多种错误，难以纠正。</li>
+</ul>
+<blockquote>
+<p>在非增量式集成测试时，应当确定关键模块，对这些关键模块及早进行测试。</p>
+</blockquote>
+</li>
+<li><p>增量式集成策略：逐步实现</p>
+<p>分类：</p>
+<p>自顶向下增量式测试</p>
+<ul>
+<li>深度优先方式：首先集成在结构中的一个主控路径下的所有模块，主控路径的选择是任意的。</li>
+<li>广度优先方式：首先沿着水平方向，把每一层中所有直接隶属于上一层的模块集成起来，直到底层。</li>
+<li>优点：<ul>
+<li>较早地验证了主要控制和判断点；</li>
+<li>功能较早证实；</li>
+<li>只需一个驱动；</li>
+<li>支持故障隔离；</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>桩的开发量大；</li>
+<li>底层验证被推迟；</li>
+<li>底层组件测试不充分；</li>
+</ul>
+</li>
+</ul>
+<p>自底向上增量式测试</p>
+<ul>
+<li>优点：<ul>
+<li>对底层组件行为较早验证；</li>
+<li>工作最初可以并行集成；</li>
+<li>减少了桩的工作量；</li>
+<li>能较好锁定软件故障所在位置；</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>驱动的开发工作量大；</li>
+<li>对高层的验证被推迟，设计上的错误不能被及时发现；</li>
+</ul>
+</li>
+</ul>
+<p>三明治增量式测试（混合增量式测试）</p>
+<ul>
+<li>优点：集合了自顶向下和自底向上两种策略的优点</li>
+<li>缺点：中间层测试不充分</li>
+<li>案例1：</li>
+</ul>
+<p><img src="/../img/2090353-20220516203830691-1262138159.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p> <img src="/../img/2090353-20220516203840091-970036967.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+</li>
+</ol>
+<ul>
+<li>案例2</li>
+</ul>
+<p><img src="/../img/2090353-20220516203853849-1668356872.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<ul>
+<li>案例3</li>
+</ul>
+<p><img src="/../img/2090353-20220516203903140-761176991.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>集成策略框图</p>
+<p><img src="/../img/2090353-20220516203911255-182962395.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h2><p>测试方法：黑盒测试</p>
+<p>目的：发现软件与系统定义不符合或与之矛盾的地方，测试用例应根据需求分析说明书来设计，并在实际使用环境下运行</p>
+<p>对象：项目级→软件（也可能包含硬件） 产品级→软件+硬件</p>
+<p>系统测试的层次：</p>
+<ol>
+<li>用户层测试<ul>
+<li>用户支持测试</li>
+<li>用户界面测试</li>
+<li>安全性测试</li>
+<li>可维护测试</li>
+</ul>
+</li>
+<li>应用层测试<ul>
+<li>系统性能</li>
+<li>系统可靠性、稳定性</li>
+<li>版本兼容性</li>
+<li>系统安装升级</li>
+</ul>
+</li>
+<li>功能层测试</li>
+<li>指标&#x2F;协议层测试</li>
+</ol>
+<h3 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h3><p>定义：功能测试是系统测试中最基本的测试。</p>
+<p>分类：</p>
+<ol>
+<li>逻辑功能测试</li>
+<li>界面测试</li>
+<li>易用性测试</li>
+<li>安装测试</li>
+<li>兼容性测试</li>
+</ol>
+<h3 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h3><p>定义：保证系统发布后，产品的性能满足用户要求。</p>
+<p>软件性能指标</p>
+<ol>
+<li>响应时间</li>
+<li>并发用户数</li>
+<li>吞吐量</li>
+<li>资源占用率</li>
+</ol>
+<p>分类：</p>
+<ol>
+<li>一般性能测试：被测系统在正常的软硬件环境下运行，不向其施加任何压力的性能测试。</li>
+<li>稳定性能测测：连续运行被测系统，检查系统运行时的稳定程度</li>
+<li>负载测试：让被测系统在其能忍受的压力的极限范围之内连续运行，来测试系统的稳定性。</li>
+<li>压力测试：通常持续不断地给被测系统增加压力，直到被测系统压垮为止，来测试系统所能承受的最大压力。</li>
+</ol>
+<h3 id="验收测试"><a href="#验收测试" class="headerlink" title="验收测试"></a>验收测试</h3><p>目的：确保软件系统可以正式投入运行。</p>
+<p>α测试</p>
+<ul>
+<li>目的：评价软件产品的FLURPS（功能、局域化、可使用性、可靠性、性能和支持）。</li>
+</ul>
+<p>β测试：由软件的多个用户在一个或多个用户的实际使用环境下进行的测试。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">#软件测试</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>软件测试核心要点</div>
+      <div>http://example.com/2022/09/05/软件测试核心要点/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年9月5日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/09/05/%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D/" title="中文分词">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">中文分词</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/09/03/%E5%85%A8%E5%9B%BD%E7%96%AB%E6%83%85%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B1%95%E7%A4%BA/" title="全国疫情可视化展示">
+                        <span class="hidden-mobile">全国疫情可视化展示</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

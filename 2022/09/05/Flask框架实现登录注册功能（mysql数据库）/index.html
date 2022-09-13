@@ -1,0 +1,615 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="前言：本例使用Flask框架完成登录和注册操作，包括前端（index.html，regist.html）和后端（app.py）两部分，前端页面不过多介绍，直接进入后端部分： 逻辑思路：登录部分：运行程序默认进入登录界面，输入账号和密码点击登录，系统进入”获取登录请求参数及处理“阶段（@app.route(‘&#x2F;login’)），验证账号密码正确后跳转到目标界面。 注册部分：运行程序输入注册">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flask框架实现登录注册功能（mysql数据库）">
+<meta property="og:url" content="http://example.com/2022/09/05/Flask%E6%A1%86%E6%9E%B6%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C%E5%8A%9F%E8%83%BD%EF%BC%88mysql%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%89/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言：本例使用Flask框架完成登录和注册操作，包括前端（index.html，regist.html）和后端（app.py）两部分，前端页面不过多介绍，直接进入后端部分： 逻辑思路：登录部分：运行程序默认进入登录界面，输入账号和密码点击登录，系统进入”获取登录请求参数及处理“阶段（@app.route(‘&#x2F;login’)），验证账号密码正确后跳转到目标界面。 注册部分：运行程序输入注册">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-05T03:35:10.000Z">
+<meta property="article:modified_time" content="2022-09-05T03:35:56.863Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Flask">
+<meta property="article:tag" content="mysql">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Flask框架实现登录注册功能（mysql数据库） - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Flask框架实现登录注册功能（mysql数据库）"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-09-05 11:35" pubdate>
+          2022年9月5日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          41 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Flask框架实现登录注册功能（mysql数据库）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>本例使用Flask框架完成登录和注册操作，包括前端（index.html，regist.html）和后端（app.py）两部分，前端页面不过多介绍，直接进入后端部分：</p>
+<h1 id="逻辑思路："><a href="#逻辑思路：" class="headerlink" title="逻辑思路："></a>逻辑思路：</h1><p>登录部分：运行程序默认进入登录界面，输入账号和密码点击登录，系统进入”获取登录请求参数及处理“阶段（@app.route(‘&#x2F;login’)），验证账号密码正确后跳转到目标界面。</p>
+<p>注册部分：运行程序输入注册部分的路由进入注册界面，输入账号、密码和确认密码，系统进入”获取注册请求及处理“阶段（@app.route(‘&#x2F;registuser’)），判断两次输入密码是否一致，一致则跳转到登录界面，否则弹出警告框提示用户重新输入。</p>
+<h2 id="主要步骤："><a href="#主要步骤：" class="headerlink" title="主要步骤："></a>主要步骤：</h2><p>①导入需要的扩展包</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs haskell"><span class="hljs-meta">#导入数据库模块</span><br><span class="hljs-keyword">import</span> pymysql<br><br><span class="hljs-title">from</span> flask <span class="hljs-keyword">import</span> Flask<br><span class="hljs-title">from</span> flask <span class="hljs-keyword">import</span> render_template<br><br><span class="hljs-meta">#导入前台请求的request模块</span><br><span class="hljs-title">from</span> flask <span class="hljs-keyword">import</span> request<br><span class="hljs-keyword">import</span> traceback<br><span class="hljs-meta">#导入弹出警告框模块</span><br><span class="hljs-keyword">import</span> win32api,win32con<br></code></pre></td></tr></table></figure>
+
+<p>②定义登录界面路由</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-comment">#默认登录页面</span><br><span class="hljs-variable">@app</span>.route(<span class="hljs-string">&#x27;/&#x27;</span>)<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">login</span>():<br>    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">&#x27;login.html&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>③定义注册界面路由</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-comment">#访问注册页面</span><br><span class="hljs-variable">@app</span>.route(<span class="hljs-string">&#x27;/regist&#x27;</span>)<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">regist</span>():<br>    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">&#x27;regist.html&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>④获取登录请求参数及处理</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-variable">@app</span>.<span class="hljs-built_in">route</span>(<span class="hljs-string">&#x27;/login&#x27;</span>)<br>def <span class="hljs-built_in">getLoginRequest</span>():<br>    # 查询用户名及密码是否匹配及存在<br>    # 连接数据库,此前在数据库中创建数据库TESTDB<br>    db = pymysql.<span class="hljs-built_in">connect</span>(host=<span class="hljs-string">&quot;localhost&quot;</span>, user=<span class="hljs-string">&quot;root&quot;</span>, password=<span class="hljs-string">&quot;417020&quot;</span>, database=<span class="hljs-string">&quot;flask&quot;</span>,charset=<span class="hljs-string">&quot;utf8&quot;</span>)<br>    # 使用<span class="hljs-built_in">cursor</span>()方法获取操作游标<br>    cursor = db.<span class="hljs-built_in">cursor</span>()<br>    # SQL 查询语句<br>    sql = <span class="hljs-string">&quot;select * from user where user=&quot;</span> + request.args.<span class="hljs-built_in">get</span>(<span class="hljs-string">&#x27;user&#x27;</span>) + <span class="hljs-string">&quot; and password=&quot;</span> + request.args.<span class="hljs-built_in">get</span>(<br>        <span class="hljs-string">&#x27;password&#x27;</span>) + <span class="hljs-string">&quot;&quot;</span><br>    <span class="hljs-attribute">try</span>:<br>        # 执行sql语句<br>        cursor.<span class="hljs-built_in">execute</span>(sql)<br>        results = cursor.<span class="hljs-built_in">fetchall</span>()<br>        <span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(results))<br>        if <span class="hljs-built_in">len</span>(results) == <span class="hljs-number">1</span>:<br>            return <span class="hljs-string">&#x27;登录成功&#x27;</span>       #返回需要跳转的页面或需要显示的字符串<br>        <span class="hljs-attribute">else</span>:<br>            return <span class="hljs-string">&#x27;用户名或密码不正确&#x27;</span><br>        # 提交到数据库执行<br>        db.<span class="hljs-built_in">commit</span>()<br>    <span class="hljs-attribute">except</span>:<br>        # 如果发生错误则回滚<br>        traceback.<span class="hljs-built_in">print_exc</span>()<br>        db.<span class="hljs-built_in">rollback</span>()<br>    # 关闭数据库连接<br>    db.<span class="hljs-built_in">close</span>()<br></code></pre></td></tr></table></figure>
+
+<p>⑤获取注册请求及处理</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-variable">@app</span>.<span class="hljs-built_in">route</span>(<span class="hljs-string">&#x27;/registuser&#x27;</span>)<br>def <span class="hljs-built_in">getRigistRequest</span>():<br>#把用户名和密码注册到数据库中<br><br>    #连接数据库,此前在数据库中创建数据库flask<br>    db = pymysql.<span class="hljs-built_in">connect</span>(host=<span class="hljs-string">&quot;localhost&quot;</span>, user=<span class="hljs-string">&quot;root&quot;</span>, password=<span class="hljs-string">&quot;417020&quot;</span>, database=<span class="hljs-string">&quot;flask&quot;</span>,charset=<span class="hljs-string">&quot;utf8&quot;</span>)<br>    #使用<span class="hljs-built_in">cursor</span>()方法获取操作游标<br>    cursor = db.<span class="hljs-built_in">cursor</span>()<br>    #获取输入框内容<br>    username=request.args.<span class="hljs-built_in">get</span>(<span class="hljs-string">&#x27;user&#x27;</span>)<br>    password=request.args.<span class="hljs-built_in">get</span>(<span class="hljs-string">&#x27;password&#x27;</span>)<br>    password2=request.args.<span class="hljs-built_in">get</span>(<span class="hljs-string">&#x27;password2&#x27;</span>)<br>    <span class="hljs-built_in">print</span>(password)<br>    <span class="hljs-built_in">print</span>(password2)<br>    #判断两次输入密码是否一致，一致则跳转到登录界面，不一致则弹出警告，要求用户重新输入<br>    if password==<span class="hljs-attribute">password2</span>:<br>        # SQL 插入语句<br>        sql = <span class="hljs-string">&quot;INSERT INTO user(user, password) VALUES (&quot;</span>+username+<span class="hljs-string">&quot;, &quot;</span>+password+<span class="hljs-string">&quot;)&quot;</span><br>        <span class="hljs-attribute">try</span>:<br>            # 执行sql语句<br>            cursor.<span class="hljs-built_in">execute</span>(sql)<br>            # 提交到数据库执行<br>            db.<span class="hljs-built_in">commit</span>()<br>             #注册成功之后跳转到登录页面<br>            return <span class="hljs-built_in">render_template</span>(<span class="hljs-string">&#x27;login.html&#x27;</span>)<br>        <span class="hljs-attribute">except</span>:<br>            #抛出错误信息<br>            traceback.<span class="hljs-built_in">print_exc</span>()<br>            # 如果发生错误则回滚<br>            db.<span class="hljs-built_in">rollback</span>()<br>            return <span class="hljs-string">&#x27;注册失败&#x27;</span><br>        # 关闭数据库连接<br>        db.<span class="hljs-built_in">close</span>()<br>    <span class="hljs-attribute">else</span>:<br>        win32api.<span class="hljs-built_in">MessageBox</span>(<span class="hljs-number">0</span>,<span class="hljs-string">&quot;两次输入密码不一致，请重新输入！&quot;</span>,<span class="hljs-string">&quot;提醒&quot;</span>,win32con.MB_ICONWARNING)<br>        return <span class="hljs-built_in">render_template</span>(<span class="hljs-string">&#x27;regist.html&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h2 id="完整代码："><a href="#完整代码：" class="headerlink" title="完整代码："></a>完整代码：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#导入数据库模块</span><br><span class="hljs-keyword">import</span> pymysql<br><br><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask<br><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> render_template<br><br><span class="hljs-comment">#导入前台请求的request模块</span><br><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> request<br><span class="hljs-keyword">import</span> traceback<br><span class="hljs-comment">#导入弹出警告框模块</span><br><span class="hljs-keyword">import</span> win32api,win32con<br><br><span class="hljs-comment">#创建Flask应用实例</span><br>app = Flask(__name__)<br><br><br><span class="hljs-comment">#默认登录页面</span><br><span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">&#x27;/&#x27;</span></span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">login</span>():<br>    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">&#x27;login.html&#x27;</span>)<br><br><span class="hljs-comment">#访问注册页面</span><br><span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">&#x27;/regist&#x27;</span></span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">regist</span>():<br>    <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">&#x27;regist.html&#x27;</span>)<br><br><span class="hljs-comment">#获取注册请求及处理</span><br><span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">&#x27;/registuser&#x27;</span></span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">getRigistRequest</span>():<br><span class="hljs-comment">#把用户名和密码注册到数据库中</span><br><br>    <span class="hljs-comment">#连接数据库,此前在数据库中创建数据库flask</span><br>    db = pymysql.connect(host=<span class="hljs-string">&quot;localhost&quot;</span>, user=<span class="hljs-string">&quot;root&quot;</span>, password=<span class="hljs-string">&quot;417020&quot;</span>, database=<span class="hljs-string">&quot;flask&quot;</span>,charset=<span class="hljs-string">&quot;utf8&quot;</span>)<br>    <span class="hljs-comment">#使用cursor()方法获取操作游标</span><br>    cursor = db.cursor()<br>    <span class="hljs-comment">#获取输入框内容</span><br>    username=request.args.get(<span class="hljs-string">&#x27;user&#x27;</span>)<br>    password=request.args.get(<span class="hljs-string">&#x27;password&#x27;</span>)<br>    password2=request.args.get(<span class="hljs-string">&#x27;password2&#x27;</span>)<br>    <span class="hljs-built_in">print</span>(password)<br>    <span class="hljs-built_in">print</span>(password2)<br>    <span class="hljs-comment">#判断两次输入密码是否一致，一致则跳转到登录界面，不一致则弹出警告，要求用户重新输入</span><br>    <span class="hljs-keyword">if</span> password==password2:<br>        <span class="hljs-comment"># SQL 插入语句</span><br>        sql = <span class="hljs-string">&quot;INSERT INTO user(user, password) VALUES (&quot;</span>+username+<span class="hljs-string">&quot;, &quot;</span>+password+<span class="hljs-string">&quot;)&quot;</span><br>        <span class="hljs-keyword">try</span>:<br>            <span class="hljs-comment"># 执行sql语句</span><br>            cursor.execute(sql)<br>            <span class="hljs-comment"># 提交到数据库执行</span><br>            db.commit()<br>             <span class="hljs-comment">#注册成功之后跳转到登录页面</span><br>            <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">&#x27;login.html&#x27;</span>)<br>        <span class="hljs-keyword">except</span>:<br>            <span class="hljs-comment">#抛出错误信息</span><br>            traceback.print_exc()<br>            <span class="hljs-comment"># 如果发生错误则回滚</span><br>            db.rollback()<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;注册失败&#x27;</span><br>        <span class="hljs-comment"># 关闭数据库连接</span><br>        db.close()<br>    <span class="hljs-keyword">else</span>:<br>        win32api.MessageBox(<span class="hljs-number">0</span>,<span class="hljs-string">&quot;两次输入密码不一致，请重新输入！&quot;</span>,<span class="hljs-string">&quot;提醒&quot;</span>,win32con.MB_ICONWARNING)<br>        <span class="hljs-keyword">return</span> render_template(<span class="hljs-string">&#x27;regist.html&#x27;</span>)<br><br><span class="hljs-comment"># 获取登录参数及处理</span><br><span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">&#x27;/login&#x27;</span></span>)</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">getLoginRequest</span>():<br>    <span class="hljs-comment"># 查询用户名及密码是否匹配及存在</span><br>    <span class="hljs-comment"># 连接数据库,此前在数据库中创建数据库TESTDB</span><br>    db = pymysql.connect(host=<span class="hljs-string">&quot;localhost&quot;</span>, user=<span class="hljs-string">&quot;root&quot;</span>, password=<span class="hljs-string">&quot;417020&quot;</span>, database=<span class="hljs-string">&quot;flask&quot;</span>,charset=<span class="hljs-string">&quot;utf8&quot;</span>)<br>    <span class="hljs-comment"># 使用cursor()方法获取操作游标</span><br>    cursor = db.cursor()<br>    <span class="hljs-comment"># SQL 查询语句</span><br>    sql = <span class="hljs-string">&quot;select * from user where user=&quot;</span> + request.args.get(<span class="hljs-string">&#x27;user&#x27;</span>) + <span class="hljs-string">&quot; and password=&quot;</span> + request.args.get(<br>        <span class="hljs-string">&#x27;password&#x27;</span>) + <span class="hljs-string">&quot;&quot;</span><br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-comment"># 执行sql语句</span><br>        cursor.execute(sql)<br>        results = cursor.fetchall()<br>        <span class="hljs-built_in">print</span>(<span class="hljs-built_in">len</span>(results))<br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(results) == <span class="hljs-number">1</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;登录成功&#x27;</span>       <span class="hljs-comment">#返回需要跳转的页面或需要显示的字符串</span><br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;用户名或密码不正确&#x27;</span><br>        <span class="hljs-comment"># 提交到数据库执行</span><br>        db.commit()<br>    <span class="hljs-keyword">except</span>:<br>        <span class="hljs-comment"># 如果发生错误则回滚</span><br>        traceback.print_exc()<br>        db.rollback()<br>    <span class="hljs-comment"># 关闭数据库连接</span><br>    db.close()<br><br><br><span class="hljs-comment"># 使用__name__ == &#x27;__main__&#x27;是 Python 的惯用法，确保直接执行此脚本时才</span><br><span class="hljs-comment"># 启动服务器，若其他程序调用该脚本可能父级程序会启动不同的服务器</span><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    app.run(debug=<span class="hljs-literal">True</span>)<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Flask/">#Flask</a>
+      
+        <a href="/tags/mysql/">#mysql</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Flask框架实现登录注册功能（mysql数据库）</div>
+      <div>http://example.com/2022/09/05/Flask框架实现登录注册功能（mysql数据库）/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年9月5日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/09/05/%E5%86%B3%E7%AD%96%E6%A0%91%E2%80%94%E2%80%94%E9%9D%9E%E6%AD%A3%E5%B8%B8%E4%BC%81%E4%B8%9A%E6%95%B0%E7%9B%AE%E9%A2%84%E6%B5%8B/" title="决策树——非正常企业数目预测">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">决策树——非正常企业数目预测</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/09/05/pymysql-err-OperationalError-1054-Unknown-column-aa-in-field-list/" title="pymysql.err.OperationalError: (1054, &#39;Unknown column &#39;aa&#39; in &#39;field list&#39;&#39;)">
+                        <span class="hidden-mobile">pymysql.err.OperationalError: (1054, &#39;Unknown column &#39;aa&#39; in &#39;field list&#39;&#39;)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
